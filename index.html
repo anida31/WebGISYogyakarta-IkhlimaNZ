@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGIS Yogyakarta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <span class="header-icon">🗺️</span>
+          <div>
+            <h1>WebGIS Yogyakarta</h1>
+          </div>
+        </div>
+        <div class="header-controls">
+          <!-- BASEMAP SWITCHER -->
+          <div class="basemap-switcher">
+            <button class="basemap-btn active" data-basemap="osm">🗺️ OSM</button>
+            <button class="basemap-btn" data-basemap="minimalis">◻️ Minimalis</button>
+            <button class="basemap-btn" data-basemap="satelit">🛰️ Satelit</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FILTER KATEGORI -->
+    <div id="filter-bar">
+      <div class="filter-label">Filter Lokasi:</div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-cat="all"><span class="cat-dot" style="background: #e91e63"></span> Semua</button>
+        <button class="filter-btn" data-cat="wisata"><span class="cat-dot" style="background: #e53935"></span> 🏛️ Wisata</button>
+        <button class="filter-btn" data-cat="universitas"><span class="cat-dot" style="background: #43a047"></span> 🎓 Universitas</button>
+        <button class="filter-btn" data-cat="perbelanjaan"><span class="cat-dot" style="background: #fb8c00"></span> 🛍️ Perbelanjaan</button>
+        <button class="filter-btn" data-cat="transportasi"><span class="cat-dot" style="background: #8e24aa"></span> 🚌 Transportasi</button>
+        <button class="filter-btn" data-cat="penginapan"><span class="cat-dot" style="background: #1e88e5"></span> 🏨 Penginapan</button>
+      </div>
+    </div>
+
+    <!-- MAP WRAPPER -->
+    <div id="map-wrapper">
+      <div id="map"></div>
+
+      <!-- LEGEND -->
+      <div id="legend">
+        <div class="legend-title">📌 Legenda</div>
+        <div class="legend-item">
+          <span class="legend-emoji">🏛️</span>
+          <span>Wisata</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-emoji">🎓</span>
+          <span>Universitas</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-emoji">🛍️</span>
+          <span>Perbelanjaan</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-emoji">🚌</span>
+          <span>Transportasi</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-emoji">🏨</span>
+          <span>Penginapan</span>
+        </div>
+      </div>
+
+      <!-- COUNT BADGE -->
+      <div id="count-badge"><span id="visible-count">0</span> lokasi</div>
+    </div>
+
+    <!-- POPUP TEMPLATE (hidden) -->
+    <div id="popup-tpl" style="display: none"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
